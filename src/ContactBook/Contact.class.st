@@ -36,6 +36,12 @@ Contact >> fullname: aNameString [
 	fullname := aNameString.
 ]
 
+{ #category : #'as yet unclassified' }
+Contact >> gravatarUrl [
+^ 'http://www.gravatar.com/avatar/', (MD5 hashMessage: email
+trimBoth asLowercase) hex, '.jpg'
+]
+
 { #category : #printing }
 Contact >> printOn: aStream [
 	aStream
